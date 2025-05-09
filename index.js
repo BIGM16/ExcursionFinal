@@ -34,7 +34,7 @@ function createArcText(text, radius = 150) {
     span.style.transform = `rotate(${
       startAngle + i * angleStep
     }deg) translateY(-${radius}px)`;
-    span.style.fontSize = "7rem";
+    // span.style.fontSize = "7rem";
     span.style.zIndex = "100";
     container.appendChild(span);
   }
@@ -64,7 +64,7 @@ elements.forEach((el) => observer.observe(el));
 function adjustArcText() {
   const screenWidth = window.innerWidth;
   if (screenWidth < 768) {
-    createArcText("ON ARRIVE !", 100); // Réduire le rayon pour les petits écrans
+    createArcText("ON ARRIVE !", 50); // Réduire le rayon pour les petits écrans
   } else {
     createArcText("ON ARRIVE !", 200); // Rayon par défaut
   }

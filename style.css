@@ -420,15 +420,20 @@ section span {
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
-  color: #e7e7e7b9;
   transition: all 0.2s ease;
   border-radius: 50px;
   background-color: #2c2761;
 }
+.Reserver-btn a {
+  text-decoration: none;
+  color: #e7e7e7;
+}
 .Reserver-btn:hover {
-  color: #2c2761;
   background-color: #e7e7e7;
   font-weight: 600;
+}
+.Reserver-btn:hover a {
+  color: #2c2761;
 }
 .FootText {
   font-family: var(--intermédiare-font);
@@ -613,7 +618,8 @@ section span {
   text-underline-offset: 5px;
 }
 .contact-text p,
-.contact-form-text p, .contact-icon p {
+.contact-form-text p,
+.contact-icon p {
   color: rgb(177, 177, 177);
   font-size: 20px;
   line-height: 2.5rem;
@@ -641,7 +647,7 @@ section span {
   background-color: #f37e02;
   color: #e7e7e7;
   padding: 10px;
-  margin-top:20px ;
+  margin-top: 20px;
   border-radius: 50px;
   font-size: 1.5rem;
   font-family: var(--intermédiare-font);
@@ -652,7 +658,8 @@ section span {
   color: #2c2761;
   font-weight: 600;
 }
-.contact-form-text h2, .contact-icon h2 {
+.contact-form-text h2,
+.contact-icon h2 {
   font-size: 1.5rem;
   line-height: 1;
   margin-bottom: 40px;
@@ -671,7 +678,7 @@ section span {
   width: 100%;
   margin: 20px auto;
 }
-.contact-icon-content{
+.contact-icon-content {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -694,29 +701,6 @@ section span {
 .contact-icon a:hover {
   transform: scale(1.2);
 }
-footer{
-    background-color: #53a2dd;
-  color: #081b29;
-  padding: 20px 0;
-  text-align: center;
-  font-size: 20px;
-  font-weight: 600;
-  margin-top: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-
-
-
-
-
-
-
-
-
 
 /* Pour les écrans de moins de 1024px */
 @media (max-width: 1024px) {
@@ -818,12 +802,23 @@ footer{
 
 /* Pour les écrans de moins de 480px */
 @media (max-width: 480px) {
+  header {
+    height: 100px;
+    /* width: 100%; */
+    justify-content: center;
+    flex-direction: column;
+    padding: 0;
+  }
   .logo {
     font-size: 1.5rem;
   }
   .btn-signing {
-    font-size: 0.8rem;
+    font-size: 0.5rem;
     padding: 6px 12px;
+  }
+  .presentation-debut {
+    height: 70vh;
+    padding: 0 10px;
   }
   .presentation-debut h1 {
     font-size: 3rem;
@@ -831,28 +826,125 @@ footer{
   .presentation-debut h2 {
     font-size: 1rem;
   }
+  .presentation-debut p {
+    margin-left: 0;
+  }
+  .robot {
+    display: none;
+  }
+  .Intro {
+    height: 200vh;
+    margin-bottom: 0;
+  }
   .Intro h1 {
     font-size: 2rem;
+    text-align: center;
+  }
+  .IntroContent {
+    display: flex;
+    flex-direction: column;
+  }
+  .content{
+    padding: 0;
+    height: 50%;
   }
   .content p {
     font-size: 0.9rem;
+    font-family: var(--titre-font);
+  }
+  .activite {
+    height: 50vh;
+    margin-top: 50px;
   }
   .Affiche {
-    width: 100%;
-    height: 40%;
+    width: 50%;
+    height: 25%;
+    margin: 0 auto;
+  }
+  #textArc {
+    display: none;
+  }
+  .affiches {
+    flex-direction: row;
+    height: 90%;
+  }
+  .textAfficher {
+    font-size: 1.5rem;
+    top: -20px;
+    text-align: center;
+    opacity: 1;
+  }
+  .textDetail {
+    line-height: 1;
+    padding: 10px;
+  }
+  .textDetail h2 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  .textDetail p {
+    font-size: 0.6rem;
+    line-height: 12px;
   }
   .affiche {
-    width: 100%;
-    height: 40%;
+    width: 40%;
+    height: 60%;
+    transform: rotate(0);
+  }
+  .activitepremier {
+    flex-direction: column;
+  }
+  .activitedeux {
+    gap: 30px;
+  }
+  .activitedeux h1 {
+    text-align: center;
+  }
+  .Reserver-btn {
+    background-color: #e7e7e7;
+    font-weight: 600;
+  }
+  .Reserver-btn a {
+    color: #2c2761;
   }
   .video-container {
+    transform: rotate(0);
+  }
+  .FootText {
+    top: 12%;
+    transform: rotate(-10deg);
+  }
+  .activitedeuxieme .video-container {
+    display: none;
+  }
+  .activitedeuxiemephoto {
     width: 100%;
-    height: 30%;
+    height: 50%;
+  }
+  .groupeactivitedeuxieme {
+    width: 100%;
   }
   .textactivitepremier {
     font-size: 0.9rem;
   }
-  footer {
-    font-size: 0.8rem;
+  .activitetroisieme{
+    margin: 7rem  0 0 0;
+
+  }
+  .conteurphoto{
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    height: 700px;
+  }
+  .cadres1, .cadres4{
+    display: none;
+  }
+  .cadre{
+    height: 40%;
+    width: 80%;
+  }
+  .contact-form{
+    border: none;
   }
 }
