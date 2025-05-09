@@ -244,7 +244,7 @@ section span {
   justify-content: center;
   align-items: center;
   border-radius: 20px;
-  background-image: url(AfficheSimple.jpg);
+  background-image: url(AfficheSimpleVf.jpeg);
   background-size: cover;
   background-position: center;
   margin-right: 30px;
@@ -333,13 +333,13 @@ section span {
 }
 .premier {
   transform: rotate(-30deg);
-  background-image: url(AfficheActivite.jpg);
+  background-image: url(AfficheActiviteVf.webp);
   background-size: cover;
   background-position: center;
 }
 .deuxieme {
   transform: rotate(30deg);
-  background-image: url(AfficheSimple.jpg);
+  background-image: url(AfficheSimpleVf.jpeg);
   background-size: cover;
   background-position: center;
 }
@@ -460,14 +460,14 @@ section span {
   z-index: 1;
 }
 .cadre1 {
-  background-image: url(TireCorde1.jpg);
+  background-image: url(TireCorde1.webp);
   background-position: center;
   background-size: cover;
   border-radius: 40px;
   transform: rotate(15deg);
 }
 .cadre2 {
-  background-image: url(TireCorde2.jpg);
+  background-image: url(TireCorde2.webp);
   background-position: center;
   background-size: cover;
   border-radius: 40px;
@@ -531,7 +531,7 @@ section span {
   border-radius: 40px;
 }
 .cadres1 {
-  background-image: url(Shoot1.jpg);
+  background-image: url(Shoot1.webp);
   background-position: center;
   background-size: cover;
   height: 200px;
@@ -543,7 +543,7 @@ section span {
   border-radius: 30px;
 }
 .cadres2 {
-  background-image: url(Shoot2.jpg);
+  background-image: url(Shoot2.webp);
   background-position: center;
   background-size: cover;
 }
@@ -553,7 +553,7 @@ section span {
   background-size: cover;
 }
 .cadres4 {
-  background-image: url(Shoot4.jpg);
+  background-image: url(Shoot4.webp);
   background-position: center;
   background-size: cover;
   height: 200px;
@@ -572,6 +572,7 @@ section span {
   align-items: center;
   width: 100%;
   margin-top: 130px;
+  margin-bottom: 30px;
 }
 .contact h1 {
   font-size: 4rem;
