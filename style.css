@@ -12,6 +12,8 @@
 }
 html {
   scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
 }
 .reveal {
   opacity: 0;
@@ -635,6 +637,7 @@ section span {
   display: flex;
   flex-direction: column;
   padding: 70px 30px;
+  position: relative;
 }
 .contact-form-text {
   width: 100%;
@@ -702,7 +705,16 @@ section span {
 .contact-icon a:hover {
   transform: scale(1.2);
 }
-
+.Monter {
+  position: absolute;
+  bottom: 0;
+  left: 30px;
+  border: none;
+  border-radius: 0px;
+  width: 50px;
+  height: 50px;
+    animation: moveTop 1.5s infinite ease-in-out;
+}
 /* Pour les écrans de moins de 1024px */
 @media (max-width: 1024px) {
   header {
@@ -805,7 +817,6 @@ section span {
 @media (max-width: 480px) {
   header {
     height: 100px;
-    /* width: 100%; */
     justify-content: center;
     flex-direction: column;
     padding: 0;
@@ -834,7 +845,7 @@ section span {
     display: none;
   }
   .Intro {
-    height: 200vh;
+    height: 250vh;
     margin-bottom: 0;
   }
   .Intro h1 {
@@ -845,7 +856,7 @@ section span {
     display: flex;
     flex-direction: column;
   }
-  .content{
+  .content {
     padding: 0;
     height: 50%;
   }
@@ -928,24 +939,24 @@ section span {
   .textactivitepremier {
     font-size: 0.9rem;
   }
-  .activitetroisieme{
-    margin: 7rem  0 0 0;
-
+  .activitetroisieme {
+    margin: 7rem 0 0 0;
   }
-  .conteurphoto{
+  .conteurphoto {
     flex-direction: column;
     justify-content: center;
     gap: 10px;
     height: 700px;
   }
-  .cadres1, .cadres4{
+  .cadres1,
+  .cadres4 {
     display: none;
   }
-  .cadre{
+  .cadre {
     height: 40%;
     width: 80%;
   }
-  .contact-form{
+  .contact-form {
     border: none;
   }
 }
