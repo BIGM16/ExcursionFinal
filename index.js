@@ -53,3 +53,23 @@ const observer = new IntersectionObserver((entries) => {
 });
 const elements = document.querySelectorAll(".reveal");
 elements.forEach((el) => observer.observe(el));
+
+
+
+
+
+
+
+// Ajuster le texte en arc pour les petits écrans
+function adjustArcText() {
+  const screenWidth = window.innerWidth;
+  if (screenWidth < 768) {
+    createArcText("ON ARRIVE !", 100); // Réduire le rayon pour les petits écrans
+  } else {
+    createArcText("ON ARRIVE !", 200); // Rayon par défaut
+  }
+}
+
+// Appeler la fonction au chargement et lors du redimensionnement
+window.addEventListener("load", adjustArcText);
+window.addEventListener("resize", adjustArcText);

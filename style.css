@@ -38,7 +38,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 5rem;
-  background: linear-gradient(to bottom,#060429,#2c2761);
+  background: linear-gradient(to bottom, #060429, #2c2761);
   background-color: #2c2761;
   transition: 0.5s ease-in-out;
   z-index: 999;
@@ -112,7 +112,7 @@ section span {
   font-size: 8rem;
   font-weight: 700;
   font-family: var(--main-font);
-  animation: moveTop 3s infinite ease-in-out;
+  animation: moveTop 1.5s infinite ease-in-out;
   pointer-events: none;
 }
 @keyframes moveTop {
@@ -155,11 +155,11 @@ section span {
   margin: 20px 0 0 30px;
   width: 80px;
   height: 80px;
-  animation: moveTop 3s infinite ease-in-out;
+  animation: moveTop 1.5s infinite ease-in-out;
 }
 .presentation-debut h4 {
   opacity: 0;
-  animation: moveTopVisibility 3s infinite ease-in-out;
+  animation: moveTopVisibility 1.5s infinite ease-in-out;
 }
 @keyframes moveTopVisibility {
   0% {
@@ -232,7 +232,7 @@ section span {
   flex-direction: column;
   gap: 20px;
 }
-.content p{
+.content p {
   font-size: 1.2rem;
   font-family: var(--intermédiare-font);
   line-height: 2rem;
@@ -391,7 +391,6 @@ section span {
   object-fit: cover;
   border-radius: 20px;
 }
-
 .textactivitepremier {
   width: 40%;
   height: 80%;
@@ -561,77 +560,123 @@ section span {
   border-radius: 30px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .contact {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 3rem;
-  padding-left: 30px;
+  width: 100%;
   margin-top: 130px;
 }
-.contact-text h2 {
-  font-size: 90px;
-  line-height: 1;
-  text-align: center;
-  pointer-events: none;
-}
-.contact-text h2 span {
-  color: #0ef;
-}
-.contact-text h4 {
-  font-size: 20px;
+.contact h1 {
+  font-size: 4rem;
   font-weight: 600;
-  color: #fff;
-  margin: 15px 0;
-  pointer-events: none;
+  letter-spacing: 0.1rem;
+  line-height: 1.2;
+  margin-bottom: 30px;
 }
-.contact-text p {
+.contact-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 500px;
+}
+
+.contact-text {
+  height: 100%;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 70px 30px;
+  margin: 0;
+}
+.contact-text h1 {
+  font-size: 2rem;
+  font-family: var(--titre-font);
+  font-weight: 600;
+  margin-bottom: 20px;
+  pointer-events: none;
+  text-align: center;
+}
+.contact-text h2 {
+  font-size: 1.5rem;
+  line-height: 1;
+  margin-bottom: 40px;
+  pointer-events: none;
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-color: #f37e02;
+  text-decoration-thickness: 5px;
+  text-underline-offset: 5px;
+}
+.contact-text p,
+.contact-form-text p, .contact-icon p {
   color: rgb(177, 177, 177);
   font-size: 20px;
-  line-height: 30px;
-  margin-bottom: 2rem;
+  line-height: 2.5rem;
   pointer-events: none;
-}
-.contact-list {
-  margin-bottom: 3rem;
-}
-.contact-list li {
-  margin-bottom: 10px;
-  display: block;
-  cursor: default;
-}
-.contact-list i {
-  display: inline-block;
-  position: relative;
-  color: #0ef;
-  font-size: 20px;
   font-weight: 600;
-  top: 5px;
-  margin-right: 20px;
+  text-align: center;
+}
+.contact-form {
+  width: 50%;
+  height: 100%;
+  border-left: 4px solid #99701b;
+  display: flex;
+  flex-direction: column;
+  padding: 70px 30px;
+}
+.contact-form-text {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.contact-form-text a {
+  text-decoration: none;
+  background-color: #f37e02;
+  color: #e7e7e7;
+  padding: 10px;
+  margin-top:20px ;
+  border-radius: 50px;
+  font-size: 1.5rem;
+  font-family: var(--intermédiare-font);
+  transition: all 0.5s ease;
+}
+.contact-form-text a:hover {
+  background-color: #e7e7e7;
+  color: #2c2761;
+  font-weight: 600;
+}
+.contact-form-text h2, .contact-icon h2 {
+  font-size: 1.5rem;
+  line-height: 1;
+  margin-bottom: 40px;
+  pointer-events: none;
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-color: #f37e02;
+  text-decoration-thickness: 5px;
+  text-underline-offset: 5px;
 }
 .contact-icon {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 350px;
+  width: 100%;
   margin: 20px auto;
+}
+.contact-icon-content{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+  width: 100%;
 }
 .contact-icon a {
   display: inline-flex;
@@ -640,61 +685,174 @@ section span {
   width: 40px;
   height: 40px;
   background: transparent;
-  border: 2px solid #53a2dd;
+  border: 2px solid #f37e02;
   border-radius: 50%;
   font-size: 20px;
   text-decoration: none;
   transition: all 0.5s ease;
-  opacity: 0;
-  animation: slideLeft 1s ease forwards;
-  animation-delay: calc(0.2s * var(--i));
 }
 .contact-icon a:hover {
-  box-shadow: 0 0 20px #0ef;
+  transform: scale(1.2);
 }
-.contact-form form {
-  position: relative;
-}
-.contact-form form input,
-.contact-form form textarea {
-  width: 90%;
-  outline: none;
-  padding: 18px;
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  border: none;
-  background-color: #55555557;
-  color: #000;
-  transition: all 1s ease;
-}
-.contact-form form input:focus,
-.contact-form form textarea:focus {
-  border: 2px solid #0ef;
-  box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
-}
-.contact-form form input[type="submit"] {
-  display: inline-block;
-  background-color: #0ef;
+footer{
+    background-color: #53a2dd;
   color: #081b29;
-  cursor: pointer;
-  font-size: 1.2rem;
-  letter-spacing: 1px;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 20px;
   font-weight: 600;
-  border-radius: 0.5rem;
-  padding: 18px;
-  border: none;
-  opacity: 0;
-  transition: all 1s ease-in-out;
-  animation: slideTop 1s ease forwards;
-  animation-delay: 2s;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.contact-form form input[type="submit"]:hover {
-  background-color: #53a2dd;
-  box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
+
+
+
+
+
+
+
+
+
+
+
+
+/* Pour les écrans de moins de 1024px */
+@media (max-width: 1024px) {
+  header {
+    padding: 1rem 2rem;
+  }
+  .logo {
+    font-size: 2rem;
+  }
+  .btn-signing {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+  .presentation-debut h1 {
+    font-size: 6rem;
+  }
+  .presentation-debut h2 {
+    font-size: 1.5rem;
+  }
+  .Intro h1 {
+    font-size: 3rem;
+  }
+  .content {
+    padding: 50px;
+  }
+  .Affiche {
+    width: 50%;
+    height: 70%;
+  }
+  .affiche {
+    width: 40%;
+    height: 60%;
+  }
+  .textDetail h2 {
+    font-size: 1.5rem;
+  }
+  .textDetail p {
+    font-size: 1rem;
+  }
+  .video-container {
+    width: 40%;
+    height: 50%;
+  }
+  .textactivitepremier {
+    width: 60%;
+    padding: 20px;
+  }
 }
-.contact-form textarea {
-  height: 220px;
-  resize: none;
+
+/* Pour les écrans de moins de 768px */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    height: auto;
+  }
+  .btn-signing {
+    margin-top: 10px;
+  }
+  .presentation-debut {
+    padding: 0 20px;
+  }
+  .presentation-debut h1 {
+    font-size: 4rem;
+  }
+  .presentation-debut h2 {
+    font-size: 1.2rem;
+  }
+  .IntroContent {
+    flex-direction: column;
+  }
+  .content {
+    width: 90%;
+    padding: 20px;
+  }
+  .Affiche {
+    width: 80%;
+    height: 50%;
+  }
+  .affiche {
+    width: 80%;
+    height: 50%;
+  }
+  .video-container {
+    width: 80%;
+    height: 40%;
+  }
+  .textactivitepremier {
+    width: 90%;
+  }
+  .contact-content {
+    flex-direction: column;
+  }
+  .contact-text,
+  .contact-form {
+    width: 100%;
+    padding: 20px;
+  }
+}
+
+/* Pour les écrans de moins de 480px */
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.5rem;
+  }
+  .btn-signing {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+  .presentation-debut h1 {
+    font-size: 3rem;
+  }
+  .presentation-debut h2 {
+    font-size: 1rem;
+  }
+  .Intro h1 {
+    font-size: 2rem;
+  }
+  .content p {
+    font-size: 0.9rem;
+  }
+  .Affiche {
+    width: 100%;
+    height: 40%;
+  }
+  .affiche {
+    width: 100%;
+    height: 40%;
+  }
+  .video-container {
+    width: 100%;
+    height: 30%;
+  }
+  .textactivitepremier {
+    font-size: 0.9rem;
+  }
+  footer {
+    font-size: 0.8rem;
+  }
 }
