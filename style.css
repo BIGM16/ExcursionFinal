@@ -12,8 +12,6 @@
 }
 html {
   scroll-behavior: smooth;
-  margin: 0;
-  padding: 0;
 }
 .reveal {
   opacity: 0;
@@ -41,7 +39,6 @@ header {
   align-items: center;
   padding: 1rem 5rem;
   background: linear-gradient(to bottom, #060429, #2c2761);
-  background-color: #2c2761;
   transition: 0.5s ease-in-out;
   z-index: 999;
 }
@@ -51,6 +48,7 @@ header {
   font-weight: 600;
   font-family: var(--fun-font);
   cursor: default;
+  color: #f37e02;
   animation: slideRight 1s ease-in-out forwards;
 }
 @keyframes slideRight {
@@ -66,8 +64,6 @@ header {
 .btn-signing {
   padding: 10px 20px;
   border: none;
-  font-size: 1rem;
-  font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
   border-radius: 50px;
@@ -90,6 +86,7 @@ header {
   font-size: 1.2rem;
   font-weight: 600;
   transition: all 0.2s ease;
+  color: #060429;
 }
 .btn-signing:hover {
   background-color: transparent;
@@ -102,15 +99,32 @@ section span {
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 .presentation-debut {
-  height: 100vh;
+  height: 200vh;
   position: relative;
-  padding: 0 100px;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin-top: 30px;
   background-color: #f37e02;
 }
 .presentation-debut h1 {
+  font-size: 4rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  line-height: 1.2;
+  margin-bottom: 30px;
+}
+.presentation {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  padding: 0 50px;
+  position: relative;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 100px;
+}
+.presentation h1 {
   font-size: 8rem;
   font-weight: 700;
   font-family: var(--main-font);
@@ -128,7 +142,7 @@ section span {
     transform: translateY(0);
   }
 }
-.presentation-debut h2 {
+.presentation h2 {
   font-size: 2rem;
   font-weight: 600;
   font-family: var(--fun-font);
@@ -147,19 +161,19 @@ section span {
     opacity: 1;
   }
 }
-.presentation-debut p {
+.presentation p {
   pointer-events: none;
   font-size: 1rem;
   margin-left: 20px;
   line-height: 1.5;
 }
-.presentation-debut box-icon {
+.presentation box-icon {
   margin: 20px 0 0 30px;
   width: 80px;
   height: 80px;
   animation: moveTop 1.5s infinite ease-in-out;
 }
-.presentation-debut h4 {
+.presentation h4 {
   opacity: 0;
   animation: moveTopVisibility 1.5s infinite ease-in-out;
 }
@@ -177,47 +191,17 @@ section span {
     opacity: 0;
   }
 }
-.presentation-debut a {
+.presentation a {
   text-decoration: none;
   color: #e7e7e7;
+  display: block;
+  width: 200px;
 }
-.robot {
-  position: absolute;
-  top: -20px;
-  right: 0;
-  width: 50%;
-  height: 600px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 2;
-  pointer-events: none;
-}
-.Intro {
-  height: 100vh;
-  background: linear-gradient(to bottom, #f37e02 40%, #2c2761 60%);
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding-top: 50px;
-  width: 100%;
-  margin-bottom: 100px;
-  pointer-events: none;
-}
-.Intro h1 {
-  font-size: 4rem;
-  font-weight: 600;
-  letter-spacing: 0.1rem;
-  line-height: 1.2;
-  margin-bottom: 30px;
-}
-.Intro span {
+/* .Intro span {
   color: #2c2761;
-}
+} */
 .IntroContent {
-  height: 90%;
+  height: 50%;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -591,7 +575,6 @@ section span {
   width: 100%;
   height: 500px;
 }
-
 .contact-text {
   height: 100%;
   width: 40%;
@@ -633,7 +616,6 @@ section span {
 .contact-form {
   width: 50%;
   height: 100%;
-  border-left: 4px solid #99701b;
   display: flex;
   flex-direction: column;
   padding: 70px 30px;
@@ -713,7 +695,7 @@ section span {
   border-radius: 0px;
   width: 50px;
   height: 50px;
-    animation: moveTop 1.5s infinite ease-in-out;
+  animation: moveTop 1.5s infinite ease-in-out;
 }
 /* Pour les écrans de moins de 1024px */
 @media (max-width: 1024px) {
@@ -783,6 +765,7 @@ section span {
   }
   .IntroContent {
     flex-direction: column;
+    margin: 0;
   }
   .content {
     width: 90%;
@@ -805,6 +788,7 @@ section span {
   }
   .contact-content {
     flex-direction: column;
+    gap: 30px;
   }
   .contact-text,
   .contact-form {
@@ -822,39 +806,45 @@ section span {
     padding: 0;
   }
   .logo {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
   .btn-signing {
-    font-size: 0.5rem;
-    padding: 6px 12px;
+    padding: 5px 10px;
   }
-  .presentation-debut {
-    height: 70vh;
-    padding: 0 10px;
-  }
-  .presentation-debut h1 {
-    font-size: 3rem;
-  }
-  .presentation-debut h2 {
+  .btn-signing a {
     font-size: 1rem;
   }
-  .presentation-debut p {
-    margin-left: 0;
+  .presentation-debut {
+    height: 150vh;
+    padding: 0;
+    margin-top: 100px;
   }
-  .robot {
-    display: none;
-  }
-  .Intro {
-    height: 250vh;
-    margin-bottom: 0;
-  }
-  .Intro h1 {
+  .presentation-debut h1 {
     font-size: 2rem;
     text-align: center;
+    margin: 30px;
+  }
+  .presentation {
+    height: 40%;
+    padding: 0 40px;
+    margin-top: 0;
+    justify-content: space-around;
+  }
+  .presentation h1 {
+    font-size: 3rem;
+  }
+  .presentation h2 {
+    font-size: 1rem;
+  }
+  .presentation p {
+    margin-left: 0;
   }
   .IntroContent {
     display: flex;
     flex-direction: column;
+    height: 60%;
+    margin: 0;
+    background: linear-gradient(to bottom, #f37e02 40%, #2c2761 60%);
   }
   .content {
     padding: 0;
@@ -869,9 +859,7 @@ section span {
     margin-top: 50px;
   }
   .Affiche {
-    width: 50%;
-    height: 25%;
-    margin: 0 auto;
+    display: none;
   }
   #textArc {
     display: none;
@@ -903,50 +891,44 @@ section span {
     height: 60%;
     transform: rotate(0);
   }
-  .activitepremier {
-    flex-direction: column;
-  }
   .activitedeux {
-    gap: 30px;
+    gap: 0;
+    padding-top: 0;
   }
   .activitedeux h1 {
     text-align: center;
   }
-  .Reserver-btn {
-    background-color: #e7e7e7;
-    font-weight: 600;
-  }
-  .Reserver-btn a {
-    color: #2c2761;
+  .activitepremier {
+    flex-direction: column;
   }
   .video-container {
     transform: rotate(0);
   }
+  .video-container video {
+    width: 70%;
+    height: 100%;
+  }
+  .textactivitepremier {
+    font-size: 1.2rem;
+  }
+  .textactivitepremier:hover {
+    background-color: inherit;
+    color: inherit;
+  }
   .FootText {
-    top: 12%;
+    top: 0;
     transform: rotate(-10deg);
+  }
+  .groupeactivitedeuxieme {
+    width: 100%;
   }
   .activitedeuxieme .video-container {
     display: none;
   }
   .activitedeuxiemephoto {
-    width: 100%;
+    width: 90%;
     height: 50%;
-  }
-  .groupeactivitedeuxieme {
-    width: 100%;
-  }
-  .textactivitepremier {
-    font-size: 0.9rem;
-  }
-  .activitetroisieme {
-    margin: 7rem 0 0 0;
-  }
-  .conteurphoto {
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
-    height: 700px;
+    transform: rotate(0);
   }
   .cadres1,
   .cadres4 {
@@ -956,7 +938,92 @@ section span {
     height: 40%;
     width: 80%;
   }
-  .contact-form {
-    border: none;
+  .activitetroisieme-video {
+    width: 100%;
+  }
+  .conteurphoto {
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 10px;
+    height: 700px;
+  }
+  .contact{
+    margin-top: 0;
+    gap: 30px;
+  }
+  .contact h1 {
+    text-align: center;
+  }
+  .Monter{
+    display: none;
+  }
+}
+@media (max-width: 400px) {
+  header {
+    height: 100px;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0;
+  }
+  .logo {
+    font-size: 1.2rem;
+  }
+  .btn-signing {
+    padding: 5px 10px;
+  }
+  .btn-signing a {
+    font-size: 1rem;
+  }
+  .presentation-debut {
+    height: 120vh;
+    margin: 0;
+    padding: 0;
+  }
+  .presentation-debut h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin: 30px 20px;
+  }
+  .presentation {
+    height: 50%;
+    margin-top: 220px;
+  }
+  .presentation h1 {
+    font-size: 3rem;
+  }
+  .presentation h2 {
+    font-size: 1rem;
+  }
+  .presentation p {
+    margin-left: 0;
+  }
+  .IntroContent {
+    display: flex;
+    height: 50%;
+    margin: 0;
+    background: linear-gradient(to bottom, #f37e02 40%, #2c2761 60%);
+  }
+  .content p {
+    font-size: 0.8rem;
+    font-family: var(--intermédiare-font);
+    line-height: 1rem;
+  }
+  .Affiche {
+    display: none;
+  }
+  .activite {
+    height: 50vh;
+    margin-top: 50px;
+  }
+}
+@media (width: 390px), (width: 344px) {
+  .presentation {
+    margin-top: 100px;
+  }
+}
+@media (width: 360px), (width: 375px) {
+  .activite {
+    height: 50vh;
+    margin-top: 150px;
   }
 }

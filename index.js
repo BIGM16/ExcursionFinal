@@ -54,12 +54,6 @@ const observer = new IntersectionObserver((entries) => {
 const elements = document.querySelectorAll(".reveal");
 elements.forEach((el) => observer.observe(el));
 
-
-
-
-
-
-
 // Ajuster le texte en arc pour les petits écrans
 function adjustArcText() {
   const screenWidth = window.innerWidth;
