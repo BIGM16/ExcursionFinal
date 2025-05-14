@@ -4,6 +4,10 @@
   --sous-titre-font: "Poppins", serif;
   --intermédiare-font: "Lora", serif;
   --fun-font: "Kaushan Script", cursive;
+  --size: 80px;
+  --stroke: 8;
+  --color-bg: #e6e6e6;
+  --color-fg: #007bff;
 }
 * {
   margin: 0;
@@ -27,6 +31,85 @@ body {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background-color: #2c2761;
   color: #e7e7e7;
+}
+/* Cercle positionné */
+#circle-timer {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.progress-ring {
+  position: absolute;
+  transform: rotate(-90deg);
+}
+
+.progress-ring__circle {
+  transition: stroke-dashoffset 0.5s ease;
+  transform: rotate(0deg);
+  transform-origin: 50% 50%;
+}
+
+.circle-text {
+  position: absolute;
+  color: #333;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Fenêtre modale */
+#modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h2 {
+  color: #007bff;
+}
+
+#detailed-timer {
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+.close {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+}
+
+.close:hover {
+  color: #ff4c4c;
 }
 header {
   position: fixed;
@@ -197,9 +280,9 @@ section span {
   display: block;
   width: 200px;
 }
-/* .Intro span {
+.coolor{
   color: #2c2761;
-} */
+}
 .IntroContent {
   height: 50%;
   width: 100%;
@@ -795,6 +878,22 @@ section span {
     width: 100%;
     padding: 20px;
   }
+  :root {
+    --size: 70px;
+  }
+
+  .circle-text {
+    font-size: 0.8rem;
+  }
+
+  .modal-content {
+    width: 85%;
+    padding: 25px;
+  }
+
+  #detailed-timer {
+    font-size: 1.4rem;
+  }
 }
 
 /* Pour les écrans de moins de 480px */
@@ -947,15 +1046,42 @@ section span {
     gap: 10px;
     height: 700px;
   }
-  .contact{
+  .contact {
     margin-top: 0;
     gap: 30px;
   }
   .contact h1 {
     text-align: center;
   }
-  .Monter{
+  .Monter {
     display: none;
+  }
+  :root {
+    --size: 60px;
+  }
+
+  #circle-timer {
+    bottom: 15px;
+    left: 15px;
+  }
+
+  .circle-text {
+    font-size: 0.7rem;
+  }
+
+  .modal-content {
+    width: 90%;
+    padding: 20px;
+  }
+
+  #detailed-timer {
+    font-size: 1.2rem;
+  }
+
+  .close {
+    top: 15px;
+    right: 15px;
+    font-size: 1.2rem;
   }
 }
 @media (max-width: 400px) {

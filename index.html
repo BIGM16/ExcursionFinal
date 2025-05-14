@@ -32,6 +32,31 @@
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
   </head>
   <body>
+    <!-- Cercle de progression -->
+    <div id="circle-timer">
+      <svg class="progress-ring" width="80" height="80">
+        <circle
+          class="progress-ring__circle"
+          stroke="#007BFF"
+          stroke-width="8"
+          fill="transparent"
+          r="32"
+          cx="40"
+          cy="40"
+        />
+      </svg>
+      <div class="circle-text" id="circle-days">0j</div>
+    </div>
+
+    <!-- Modale -->
+    <div id="modal">
+      <span class="close" onclick="closeModal()">❌</span>
+      <div class="modal-content">
+        <h2>Compte à rebours</h2>
+        <div id="detailed-timer">Chargement...</div>
+      </div>
+    </div>
+
     <header id="monHeader">
       <h1 class="logo">EXCURSION PICASSO BEACH</h1>
       <button class="btn-signing">
@@ -57,7 +82,7 @@
         ></a>
         <a href="#activite"><h4>Cliques pour voir plus</h4></a>
       </div>
-      <h1>Qu'est-ce qui <span>se prépare ?</span></h1>
+      <h1>Qu'est-ce qui <span class="coolor">se prépare ?</span></h1>
       <div class="IntroContent">
         <div class="content">
           <h2>Bienvenue à l'Événement Phare du <b>30 Mai 2025 !</b></h2>

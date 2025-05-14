@@ -1,3 +1,63 @@
+const eventDate = new Date("May 30, 2025 00:00:00").getTime();
+const startDate = new Date().getTime();
+const totalDuration = eventDate - startDate;
+
+const circle = document.querySelector(".progress-ring__circle");
+const radius = circle.r.baseVal.value;
+const circumference = 2 * Math.PI * radius;
+circle.style.strokeDasharray = `${circumference} ${circumference}`;
+circle.style.strokeDashoffset = circumference;
+
+const circleText = document.getElementById("circle-days");
+const detailedTimer = document.getElementById("detailed-timer");
+
+function setProgress(percent) {
+  const offset = circumference - percent * circumference;
+  circle.style.strokeDashoffset = offset;
+}
+
+function updateCountdown() {
+  const now = new Date().getTime();
+  const distance = eventDate - now;
+  const elapsed = eventDate - now;
+  const remainingRatio = Math.max(0, distance / totalDuration);
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor(
+    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  circleText.innerHTML = `${days}j`;
+  detailedTimer.innerHTML =
+    distance > 0
+      ? `${days} jours, ${hours} heures, ${minutes} minutes, ${seconds} secondes`
+      : "L'événement a commencé !";
+
+  setProgress(remainingRatio);
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+
+// Modal
+const circleTimer = document.getElementById("circle-timer");
+circleTimer.addEventListener("click", () => {
+  document.getElementById("modal").style.display = "block";
+});
+
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+}
+
+window.onclick = function (event) {
+  const modal = document.getElementById("modal");
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
+
 // Animation de la barre de progression
 let lastScrollTop = 0;
 const header = document.getElementById("monHeader");
