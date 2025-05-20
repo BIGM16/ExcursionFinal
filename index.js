@@ -42,9 +42,9 @@ setInterval(updateCountdown, 1000);
 updateCountdown();
 
 // Modal
-const circleTimer = document.getElementById("circle-timer");
-circleTimer.addEventListener("click", () => {
-  document.getElementById("modal").style.display = "block";
+const draggable = document.getElementById("circle-timer");
+draggable.addEventListener("click", () => {
+  document.getElementById("modal").style.display = "flex";
 });
 
 function closeModal() {
@@ -57,6 +57,50 @@ window.onclick = function (event) {
     modal.style.display = "none";
   }
 };
+// Rendre le cercle déplaçable
+
+let isDragging = false;
+let offsetX, offsetY;
+
+// Souris
+draggable.addEventListener("mousedown", (e) => {
+  isDragging = true;
+  offsetX = e.clientX - draggable.offsetLeft;
+  offsetY = e.clientY - draggable.offsetTop;
+});
+
+document.addEventListener("mousemove", (e) => {
+  if (isDragging) {
+    draggable.style.left = `${e.clientX - offsetX}px`;
+    draggable.style.top = `${e.clientY - offsetY}px`;
+    draggable.style.bottom = "auto"; // pour annuler bottom si défini
+  }
+});
+
+document.addEventListener("mouseup", () => {
+  isDragging = false;
+});
+
+// Mobile (touch)
+draggable.addEventListener("touchstart", (e) => {
+  isDragging = true;
+  const touch = e.touches[0];
+  offsetX = touch.clientX - draggable.offsetLeft;
+  offsetY = touch.clientY - draggable.offsetTop;
+});
+
+document.addEventListener("touchmove", (e) => {
+  if (isDragging) {
+    const touch = e.touches[0];
+    draggable.style.left = `${touch.clientX - offsetX}px`;
+    draggable.style.top = `${touch.clientY - offsetY}px`;
+    draggable.style.bottom = "auto";
+  }
+});
+
+document.addEventListener("touchend", () => {
+  isDragging = false;
+});
 
 // Animation de la barre de progression
 let lastScrollTop = 0;

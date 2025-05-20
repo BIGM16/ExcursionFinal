@@ -69,6 +69,9 @@ body {
 /* Fenêtre modale */
 #modal {
   display: none;
+  align-items: center;
+  justify-content: center;
+  /* Pour centrer le contenu */
   position: fixed;
   z-index: 2000;
   left: 0;
@@ -80,25 +83,63 @@ body {
 }
 
 .modal-content {
-  background-color: #fff;
-  margin: 10% auto;
+  position: relative;
+  background-color: #33333381;
+  color: #f37e02;
+  font-family: var(--main-font);
   padding: 30px;
   border-radius: 10px;
   width: 80%;
-  max-width: 400px;
+  height: 80%;
+  overflow: hidden;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
-
+.modal-content .Chrono1,
+.Chrono2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  border-radius: 20px;
+  z-index: -1;
+}
+.Chrono2 {
+  display: none;
+}
 .modal-content h2 {
-  color: #007bff;
+  pointer-events: none;
+  font-size: 3rem;
+  color: #060429;
+  z-index: 2;
 }
-
 #detailed-timer {
-  font-size: 1.5rem;
-  margin-top: 10px;
+  font-size: 4rem;
+  font-family: var(--intermédiare-font);
+  font-weight: 600;
+  margin-top: 20px;
+  animation: bouge 2s ease-in-out infinite;
+  z-index: 2;
+  pointer-events: none;
 }
-
+@keyframes bouge {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-30px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 .close {
   position: absolute;
   right: 30px;
@@ -197,9 +238,9 @@ section span {
   line-height: 1.2;
   margin-bottom: 30px;
 }
-.coolor{
-    color : #2c2761;
-    }
+.coolor {
+  color: #2c2761;
+}
 .presentation {
   width: 100%;
   height: 50%;
@@ -283,7 +324,7 @@ section span {
   display: block;
   width: 200px;
 }
-.coolor{
+.coolor {
   color: #2c2761;
 }
 .IntroContent {
@@ -1067,20 +1108,32 @@ section span {
     bottom: 15px;
     left: 15px;
   }
-
   .circle-text {
-    font-size: 0.7rem;
-  }
-
-  .modal-content {
-    width: 90%;
-    padding: 20px;
-  }
-
-  #detailed-timer {
     font-size: 1.2rem;
   }
-
+  .modal-content {
+    width: 90%;
+    height: 80%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  .Chrono1 {
+    display: none;
+  }
+  .Chrono2 {
+    display: block;
+  }
+  .modal-content h2 {
+    font-size: 2rem;
+  }
+  #detailed-timer {
+    font-size: 2.5rem;
+    font-weight: 600;
+  }
   .close {
     top: 15px;
     right: 15px;

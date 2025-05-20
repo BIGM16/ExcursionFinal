@@ -39,7 +39,7 @@
           class="progress-ring__circle"
           stroke="#007BFF"
           stroke-width="8"
-          fill="transparent"
+          fill="#fff"
           r="32"
           cx="40"
           cy="40"
@@ -52,11 +52,18 @@
     <div id="modal">
       <span class="close" onclick="closeModal()">❌</span>
       <div class="modal-content">
-        <h2>Compte à rebours</h2>
+        <video class="Chrono1" autoplay muted loop playsinline>
+          <source src="chrono1.mp4" type="video/mp4" />
+          Ton navigateur ne supporte pas la vidéo HTML5.
+        </video>
+        <video class="Chrono2" autoplay muted loop playsinline>
+          <source src="chrono2.mp4" type="video/mp4" />
+          Ton navigateur ne supporte pas la vidéo HTML5.
+        </video>
+        <h2>Temps avant le Jour-J</h2>
         <div id="detailed-timer">Chargement...</div>
       </div>
     </div>
-
     <header id="monHeader">
       <h1 class="logo">EXCURSION PICASSO BEACH</h1>
       <button class="btn-signing">
