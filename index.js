@@ -89,14 +89,19 @@ draggable.addEventListener("touchstart", (e) => {
   offsetY = touch.clientY - draggable.offsetTop;
 });
 
-document.addEventListener("touchmove", (e) => {
-  if (isDragging) {
-    const touch = e.touches[0];
-    draggable.style.left = `${touch.clientX - offsetX}px`;
-    draggable.style.top = `${touch.clientY - offsetY}px`;
-    draggable.style.bottom = "auto";
-  }
-});
+document.addEventListener(
+  "touchmove",
+  (e) => {
+    if (isDragging) {
+      e.preventDefault(); // Empêche le défilement de la page
+      const touch = e.touches[0];
+      draggable.style.left = `${touch.clientX - offsetX}px`;
+      draggable.style.top = `${touch.clientY - offsetY}px`;
+      draggable.style.bottom = "auto";
+    }
+  },
+  { passive: false }
+);
 
 document.addEventListener("touchend", () => {
   isDragging = false;
