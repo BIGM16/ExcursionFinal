@@ -1,4 +1,4 @@
-const eventDate = new Date("May 30, 2025 00:00:00").getTime();
+const eventDate = new Date("June 30, 2025 00:00:00").getTime();
 const startDate = new Date().getTime();
 const totalDuration = eventDate - startDate;
 
