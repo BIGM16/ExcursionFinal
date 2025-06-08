@@ -93,24 +93,23 @@ document.querySelectorAll(".faq-question").forEach((question) => {
     }
   });
 });
-document
-  .getElementById("contact-form")
-  .addEventListener("submit", function (e) {
-    e.preventDefault();
-    alert(
-      "Merci pour votre message ! Nous vous répondrons dans les plus brefs délais."
-    );
-    this.reset();
-  });
+// document
+//   .getElementById("contact-form")
+//   .addEventListener("submit", function (e) {
+//     e.preventDefault();
+//     alert(
+//       "Merci pour votre message ! Nous vous répondrons dans les plus brefs délais."
+//     );
+//     this.reset();
+//   });
 
-document
-  .getElementById("newsletter-form")
-  .addEventListener("submit", function (e) {
-    e.preventDefault();
-    alert("Merci de vous être inscrit à notre newsletter !");
-    this.reset();
-  });
-
+// document
+//   .getElementById("newsletter-form")
+//   .addEventListener("submit", function (e) {
+//     e.preventDefault();
+//     alert("Merci de vous être inscrit à notre newsletter !");
+//     this.reset();
+//   });
 const form = document.getElementById("inscription-form");
 const confirmation = document.getElementById("confirmation-message");
 
@@ -171,8 +170,9 @@ const newsletterForm = document.getElementById("newsletter-form");
 newsletterForm.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  const email = document.getElementById("newsletter-email").value.trim();
-  const newsletterMessage = `Je souhaite m'inscrire à la newsletter avec l'adresse email suivante : ${email}`;
+  const Email = document.getElementById("newsletter-email").value.trim();
+  const newsletterMessage = `Je souhaite m'inscrire à la newsletter avec 
+  l'adresse email suivante : ${Email}`;
 
   const numeroWhatsApp = "243996964747"; // Remplace par ton numéro
   const lien = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(
