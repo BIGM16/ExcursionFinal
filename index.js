@@ -1,178 +1,186 @@
-const eventDate = new Date("June 30, 2025 00:00:00").getTime();
-const startDate = new Date().getTime();
-const totalDuration = eventDate - startDate;
-
-const circle = document.querySelector(".progress-ring__circle");
-const radius = circle.r.baseVal.value;
-const circumference = 2 * Math.PI * radius;
-circle.style.strokeDasharray = `${circumference} ${circumference}`;
-circle.style.strokeDashoffset = circumference;
-
-const circleText = document.getElementById("circle-days");
-const detailedTimer = document.getElementById("detailed-timer");
-
-function setProgress(percent) {
-  const offset = circumference - percent * circumference;
-  circle.style.strokeDashoffset = offset;
-}
-
-function updateCountdown() {
-  const now = new Date().getTime();
-  const distance = eventDate - now;
-  const elapsed = eventDate - now;
-  const remainingRatio = Math.max(0, distance / totalDuration);
-
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor(
-    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-  );
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  circleText.innerHTML = `${days}j`;
-  detailedTimer.innerHTML =
-    distance > 0
-      ? `${days} jours, ${hours} heures, ${minutes} minutes, ${seconds} secondes`
-      : "L'événement a commencé !";
-
-  setProgress(remainingRatio);
-}
-
-setInterval(updateCountdown, 1000);
-updateCountdown();
-
-// Modal
-const draggable = document.getElementById("circle-timer");
-draggable.addEventListener("click", () => {
-  document.getElementById("modal").style.display = "flex";
-});
-
-function closeModal() {
-  document.getElementById("modal").style.display = "none";
-}
-
-window.onclick = function (event) {
-  const modal = document.getElementById("modal");
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
-// Rendre le cercle déplaçable
-
-let isDragging = false;
-let offsetX, offsetY;
-
-// Souris
-draggable.addEventListener("mousedown", (e) => {
-  isDragging = true;
-  offsetX = e.clientX - draggable.offsetLeft;
-  offsetY = e.clientY - draggable.offsetTop;
-});
-
-document.addEventListener("mousemove", (e) => {
-  if (isDragging) {
-    draggable.style.left = `${e.clientX - offsetX}px`;
-    draggable.style.top = `${e.clientY - offsetY}px`;
-    draggable.style.bottom = "auto"; // pour annuler bottom si défini
-  }
-});
-
-document.addEventListener("mouseup", () => {
-  isDragging = false;
-});
-
-// Mobile (touch)
-draggable.addEventListener("touchstart", (e) => {
-  isDragging = true;
-  const touch = e.touches[0];
-  offsetX = touch.clientX - draggable.offsetLeft;
-  offsetY = touch.clientY - draggable.offsetTop;
-});
-
-document.addEventListener(
-  "touchmove",
-  (e) => {
-    if (isDragging) {
-      e.preventDefault(); // Empêche le défilement de la page
-      const touch = e.touches[0];
-      draggable.style.left = `${touch.clientX - offsetX}px`;
-      draggable.style.top = `${touch.clientY - offsetY}px`;
-      draggable.style.bottom = "auto";
+// Mobile menu toggle
+const menuToggle = document.getElementById("menu-toggle");
+if (menuToggle) {
+  menuToggle.addEventListener("click", function () {
+    const mobileMenu = document.getElementById("mobile-menu");
+    mobileMenu.style.top = "0";
+    mobileMenu.style.opacity = "1";
+    if (mobileMenu) {
+      mobileMenu.classList.toggle("hidden");
     }
-  },
-  { passive: false }
-);
-
-document.addEventListener("touchend", () => {
-  isDragging = false;
-});
-
-// Animation de la barre de progression
-let lastScrollTop = 0;
-const header = document.getElementById("monHeader");
-window.addEventListener("scroll", () => {
-  let scrollTop = window.scrollY || document.documentElement.scrollTop;
-
-  if (scrollTop > lastScrollTop) {
-    // vers le bas : cacher le header
-    header.style.top = "-100px"; // on le fait remonter hors de l'écran
-  } else {
-    // vers le haut : afficher le header
-    header.style.top = "0";
-  }
-  lastScrollTop = scrollTop;
-});
-
-// Text en arc
-function createArcText(text, radius = 150) {
-  const container = document.getElementById("textArc");
-  container.innerHTML = ""; // Nettoie l'ancien contenu
-  container.style.position = "relative";
-  container.style.margin = "0 auto";
-  container.style.transform = "rotate(0deg)";
-
-  const angleStep = 150 / text.length; // demi-cercle
-  let startAngle = 10 - (angleStep * text.length) / 2;
-
-  for (let i = 0; i < text.length; i++) {
-    const span = document.createElement("span");
-    span.innerText = text[i];
-    span.style.position = "absolute";
-    span.style.color = "#fff";
-    span.style.transformOrigin = `bottom center`;
-    span.style.transform = `rotate(${
-      startAngle + i * angleStep
-    }deg) translateY(-${radius}px)`;
-    // span.style.fontSize = "7rem";
-    span.style.zIndex = "100";
-    container.appendChild(span);
-  }
+  });
+}
+const closeBtn = document.getElementById("closeBtn");
+if (closeBtn) {
+  closeBtn.addEventListener("click", function () {
+    const mobileMenu = document.getElementById("mobile-menu");
+    mobileMenu.classList.add("hidden");
+    mobileMenu.style.top = "-250px";
+    mobileMenu.style.opacity = "0";
+  });
+} else {
+  console.error("Close button not found");
 }
 
-// Utilisation :
-createArcText("ON ARRIVE !", 200);
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    const targetId = this.getAttribute("href");
+    const targetElement = document.querySelector(targetId);
 
-// -- Lignes suivante -- //
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
+    if (targetElement) {
+      window.scrollTo({
+        top: targetElement.offsetTop - 70, // Adjust for fixed header
+        behavior: "smooth",
+      });
+
+      // Close mobile menu if open
+      const mobileMenu = document.getElementById("mobile-menu");
+      if (!mobileMenu.classList.contains("hidden")) {
+        mobileMenu.classList.add("hidden");
+        mobileMenu.style.top = "-250px";
+        mobileMenu.style.opacity = "0";
+      }
     }
   });
 });
-const elements = document.querySelectorAll(".reveal");
-elements.forEach((el) => observer.observe(el));
 
-// Ajuster le texte en arc pour les petits écrans
-function adjustArcText() {
-  const screenWidth = window.innerWidth;
-  if (screenWidth < 768) {
-    createArcText("ON ARRIVE !", 50); // Réduire le rayon pour les petits écrans
+// Countdown timer
+function updateCountdown() {
+  const eventDate = new Date("June 30, 2025 07:30:00").getTime();
+  const now = new Date().getTime();
+  const timeLeft = eventDate - now;
+
+  if (timeLeft > 0) {
+    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+    document.getElementById("days").innerText = days;
+    document.getElementById("hours").innerText = hours;
+    document.getElementById("minutes").innerText = minutes;
+    document.getElementById("seconds").innerText = seconds;
   } else {
-    createArcText("ON ARRIVE !", 200); // Rayon par défaut
+    document.getElementById("days").innerText = "0";
+    document.getElementById("hours").innerText = "0";
+    document.getElementById("minutes").innerText = "0";
+    document.getElementById("seconds").innerText = "0";
   }
 }
 
-// Appeler la fonction au chargement et lors du redimensionnement
-window.addEventListener("load", adjustArcText);
-window.addEventListener("resize", adjustArcText);
+// Update countdown every second
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// FAQ accordion
+document.querySelectorAll(".faq-question").forEach((question) => {
+  question.addEventListener("click", () => {
+    const answer = question.nextElementSibling;
+    const icon = question.querySelector(".faq-icon");
+
+    // Toggle answer visibility
+    answer.classList.toggle("hidden");
+
+    // Rotate icon
+    if (answer.classList.contains("hidden")) {
+      icon.classList.remove("rotate-180");
+    } else {
+      icon.classList.add("rotate-180");
+    }
+  });
+});
+document
+  .getElementById("contact-form")
+  .addEventListener("submit", function (e) {
+    e.preventDefault();
+    alert(
+      "Merci pour votre message ! Nous vous répondrons dans les plus brefs délais."
+    );
+    this.reset();
+  });
+
+document
+  .getElementById("newsletter-form")
+  .addEventListener("submit", function (e) {
+    e.preventDefault();
+    alert("Merci de vous être inscrit à notre newsletter !");
+    this.reset();
+  });
+
+const form = document.getElementById("inscription-form");
+const confirmation = document.getElementById("confirmation-message");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const prenom = document.getElementById("prenom").value.trim();
+  const nom = document.getElementById("nom").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const tel = document.getElementById("telephone").value.trim();
+  const besoin = document.getElementById("besoins").value.trim();
+
+  const message = `Nouvelle inscription à l'excursion Picasso :
+Prénom: ${prenom}
+Nom: ${nom}
+Email: ${email}
+Téléphone: ${tel}
+Besoin particulier: ${besoin || "Aucune indication"}
+Merci bien`;
+
+  const numeroWhatsApp = "243898955349"; // Remplace par ton numéro
+  const lien = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(
+    message
+  )}`;
+
+  window.open(lien, "_blank"); // Ouvre WhatsApp
+
+  confirmation.style.display = "block"; // Affiche le message
+  form.reset(); // Réinitialise le formulaire
+});
+
+const contactForm = document.getElementById("contact-form");
+contactForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const nom = document.getElementById("contact-nom").value.trim();
+  const sujet = document.getElementById("contact-sujet").value.trim();
+  const email = document.getElementById("contact-email").value.trim();
+  const message = document.getElementById("contact-message").value.trim();
+
+  const contactMessage = `Bonjour, je me présente, je suis ${nom}.
+Voici mon message de contact qui est au sujet de "${sujet || "Aucun sujet"}".
+Je vous écris à l'adresse email suivante : ${email}.
+Mon message est le suivant : ${message}`;
+
+  const numeroWhatsApp = "243996964747"; // Remplace par ton numéro
+  const lien = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(
+    contactMessage
+  )}`;
+
+  window.open(lien, "_blank"); // Ouvre WhatsApp
+
+  confirmation.style.display = "block"; // Affiche le message
+  form.reset(); // Réinitialise le formulaire
+});
+
+const newsletterForm = document.getElementById("newsletter-form");
+newsletterForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const email = document.getElementById("newsletter-email").value.trim();
+  const newsletterMessage = `Je souhaite m'inscrire à la newsletter avec l'adresse email suivante : ${email}`;
+
+  const numeroWhatsApp = "243996964747"; // Remplace par ton numéro
+  const lien = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(
+    newsletterMessage
+  )}`;
+
+  window.open(lien, "_blank"); // Ouvre WhatsApp
+
+  confirmation.style.display = "block"; // Affiche le message
+  form.reset(); // Réinitialise le formulaire
+});
