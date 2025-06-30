@@ -65,10 +65,10 @@ function updateCountdown() {
     document.getElementById("minutes").innerText = minutes;
     document.getElementById("seconds").innerText = seconds;
   } else {
-    document.getElementById("days").innerText = "0";
-    document.getElementById("hours").innerText = "0";
-    document.getElementById("minutes").innerText = "0";
-    document.getElementById("seconds").innerText = "0";
+    document.getElementById("days").innerText = "TH";
+    document.getElementById("hours").innerText = "AN";
+    document.getElementById("minutes").innerText = "K Y";
+    document.getElementById("seconds").innerText = "OU";
   }
 }
 
@@ -93,23 +93,6 @@ document.querySelectorAll(".faq-question").forEach((question) => {
     }
   });
 });
-// document
-//   .getElementById("contact-form")
-//   .addEventListener("submit", function (e) {
-//     e.preventDefault();
-//     alert(
-//       "Merci pour votre message ! Nous vous répondrons dans les plus brefs délais."
-//     );
-//     this.reset();
-//   });
-
-// document
-//   .getElementById("newsletter-form")
-//   .addEventListener("submit", function (e) {
-//     e.preventDefault();
-//     alert("Merci de vous être inscrit à notre newsletter !");
-//     this.reset();
-//   });
 const form = document.getElementById("inscription-form");
 const confirmation = document.getElementById("confirmation-message");
 

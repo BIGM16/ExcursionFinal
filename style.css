@@ -50,7 +50,7 @@ body button:hover {
   align-items: center;
   justify-content: space-around;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  transition: all 2s ease;
+  transition: all 0.5s ease;
 }
 #mobile-menu #closeBtn {
   position: absolute;
