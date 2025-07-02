@@ -19,6 +19,7 @@
     <title>Excursion AUK</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="codeblog.css" />
     <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <link rel="shortcut icon" href="favicon.ico" />
@@ -55,20 +56,20 @@
             class="text-gray-700 hover:text-blue-600 font-medium"
             >Accueil</a
           >
-          <a
+          <!-- <a
             href="#programme"
             class="text-gray-700 hover:text-blue-600 font-medium"
             >Programme</a
-          >
+          > -->
           <a
-            href="#galerie"
+            href="#activités_diverses"
             class="text-gray-700 hover:text-blue-600 font-medium"
             >Galerie</a
           >
           <a
-            href="#inscription"
+            href="#impressions"
             class="text-gray-700 hover:text-blue-600 font-medium"
-            >Inscription</a
+            >Vos Impressions</a
           >
           <a
             href="#contact"
@@ -105,14 +106,16 @@
         <a href="#accueil" class="block py-2 text-gray-700 font-medium"
           >Accueil</a
         >
-        <a href="#programme" class="block py-2 text-gray-700 font-medium"
+        <!-- <a href="#programme" class="block py-2 text-gray-700 font-medium"
           >Programme</a
-        >
-        <a href="#activités_diverses" class="block py-2 text-gray-700 font-medium"
+        > -->
+        <a
+          href="#activités_diverses"
+          class="block py-2 text-gray-700 font-medium"
           >Galerie</a
         >
-        <a href="#inscription" class="block py-2 text-gray-700 font-medium"
-          >Inscription</a
+        <a href="#impressions" class="block py-2 text-gray-700 font-medium"
+          >Vos Impressions</a
         >
         <a href="#contact" class="block py-2 text-gray-700 font-medium"
           >Contact</a
@@ -161,10 +164,10 @@
                 >Voir le programme</a
               > -->
               <a
-                href="#programme"
+                href="#impressions"
                 class="border-2 border-white text-white font-bold py-3 px-6 rounded-lg transition duration-300 text-center"
                 id="program-button"
-                >Nous contacter</a
+                >Donnez votre avis</a
               >
             </div>
           </div>
@@ -176,36 +179,48 @@
     </section>
 
     <!-- Countdown Section -->
-    <section class="py-16 bg-white">
+    <section class="py-16 bg-gray-100">
       <div class="container mx-auto px-4">
         <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
           <!-- Compte à rebours -->
-           Restez à l'affut... Quelque chose se prépare...
+          Nous sommes heureux de vous avoir comptés parmi nous !
         </h2>
         <div class="flex flex-wrap justify-center gap-4">
           <div
             class="countdown-item text-white rounded-xl p-6 w-36 text-center shadow-lg"
           >
             <div id="days" class="text-4xl font-bold mb-1">--</div>
-            <div class="text-sm uppercase tracking-wider">Jours</div>
+            <!-- <div class="text-sm uppercase tracking-wider">Jours</div> -->
           </div>
           <div
             class="countdown-item text-white rounded-xl p-6 w-36 text-center shadow-lg"
           >
             <div id="hours" class="text-4xl font-bold mb-1">--</div>
-            <div class="text-sm uppercase tracking-wider">Heures</div>
+            <!-- <div class="text-sm uppercase tracking-wider">Heures</div> -->
           </div>
           <div
             class="countdown-item text-white rounded-xl p-6 w-36 text-center shadow-lg"
           >
             <div id="minutes" class="text-4xl font-bold mb-1">--</div>
-            <div class="text-sm uppercase tracking-wider">Minutes</div>
+            <!-- <div class="text-sm uppercase tracking-wider">Minutes</div> -->
           </div>
           <div
             class="countdown-item text-white rounded-xl p-6 w-36 text-center shadow-lg"
           >
             <div id="seconds" class="text-4xl font-bold mb-1">--</div>
-            <div class="text-sm uppercase tracking-wider">Secondes</div>
+            <!-- <div class="text-sm uppercase tracking-wider">Secondes</div> -->
+          </div>
+          <div
+            class="countdown-item text-white rounded-xl p-6 w-36 text-center shadow-lg"
+          >
+            <div id="autre" class="text-4xl font-bold mb-1">--</div>
+            <!-- <div class="text-sm uppercase tracking-wider">Secondes</div> -->
+          </div>
+          <div
+            class="countdown-item text-white rounded-xl p-6 w-36 text-center shadow-lg"
+          >
+            <div id="autres" class="text-4xl font-bold mb-1">--</div>
+            <!-- <div class="text-sm uppercase tracking-wider">Secondes</div> -->
           </div>
         </div>
       </div>
@@ -436,20 +451,19 @@
         </div>
       </div>
     </section> -->
-    <section id="activités_diverses" class="py-16 bg-white">
+    <section id="activités_diverses" class="py-16 bg-gray-100">
       <div class="container mx-auto px-4">
         <h2 class="text-3xl font-bold text-center mb-4 text-gray-800">
-          Activités Prévues Lors de l'Excursion
+          Retour sur images de l'activité du 30 juin 2025
         </h2>
         <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-          Profitez d'une journée riche en découvertes, apprentissages et
-          activités ludiques. Voici un aperçu des activités prévues pour le 30
-          juin 2025.
+          Les images de l'activité seront bientot disponibles, restons à
+          l'affut.
         </p>
 
-        <div class="carousel-container" id="carousel">
+        <!-- <div class="carousel-container" id="carousel">
           <div class="carousel-track" id="track">
-            <!-- Répété deux fois pour effet infini visuel -->
+            Répété deux fois pour effet infini visuel
             <div
               class="gallery-item rounded-lg overflow-hidden shadow-lg carousel-item"
             >
@@ -533,7 +547,7 @@
           </div>
           <div class="fade fade-left"></div>
           <div class="fade fade-right"></div>
-        </div>
+        </div> -->
       </div>
     </section>
 
@@ -583,15 +597,18 @@
 
           <!-- Gallery Item 3 -->
           <div class="gallery-item rounded-lg overflow-hidden shadow-lg">
-            <div class="h-64 bg-green-50 flex items-center justify-center">
-              <h1>Excursion Picasso Beach</h1>
+            <div
+              class="h-64 bg-green-50 flex items-center justify-center"
+              id="picasso"
+            >
+              <!-- <h1>Excursion Picasso Beach</h1> -->
             </div>
             <div class="p-4">
               <h3 class="font-bold text-lg mb-2">Excursion Picasso Beach</h3>
               <p class="text-gray-600">
-                30 Juin 2025 - Organisation d'une conférence au sein de
-                l'université pour la promotion des activités culturelles et
-                sportives.
+                30 Juin 2025 - Organisation d'une excursion à Picasso Beach pour
+                favoriser la conviviabilité entre etudiants et permettre une
+                détente adéquate.
               </p>
             </div>
           </div>
@@ -600,7 +617,7 @@
     </section>
 
     <!-- Inscription Section -->
-    <section id="inscription" class="py-16 bg-blue-50">
+    <!--<section id="inscription" class="py-16 bg-blue-50">
       <div class="container mx-auto px-4">
         <h2 class="text-3xl font-bold text-center mb-4 text-gray-800">
           Inscription à l'Excursion
@@ -747,17 +764,53 @@
           </div>
         </div>
       </div>
+    </section> -->
+    <!-- blog section-->
+    <section class="bg-gray-100 px-6" id="impressions">
+      <header class="text-center py-8">
+        <h1 class="text-4xl md:text-5xl font-bold mb-2 text-indigo-900">
+          Mur à intéractions
+        </h1>
+        <p class="text-xl text-gray-600">
+          Partagez vos impressions par rapport à l'activité, un mot à la fois
+        </p>
+      </header>
+
+      <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+        <h2 class="text-2xl font-semibold mb-4 text-indigo-800">
+          Ajouter votre message
+        </h2>
+        <div class="flex flex-col md:flex-row gap-4">
+          <textarea
+            id="messageInput"
+            class="flex-grow p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition"
+            rows="3"
+            placeholder="Écrivez votre message ici..."
+          ></textarea>
+          <div class="flex flex-col justify-end">
+            <button
+              id="submitBtn"
+              class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 px-6 rounded-lg transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
+            >
+              Publier
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="message-container gap-4 py-8" id="messagesContainer">
+        <!-- Les messages seront ajoutés ici dynamiquement -->
+      </div>
     </section>
 
     <!-- FAQ Section -->
     <section class="py-16 bg-white" id="conditions">
       <div class="container mx-auto px-4">
         <h2 class="text-3xl font-bold text-center mb-4 text-gray-800">
-          Questions Fréquentes et Quelques Conditions de Participation
+          Questions Fréquentes et Quelques Conditions de Partage d'Impressions
         </h2>
         <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
           Trouvez les réponses aux questions les plus courantes concernant notre
-          excursion universitaire.
+          mur à impressions.
         </p>
 
         <div class="max-w-3xl mx-auto">
@@ -770,7 +823,7 @@
                 class="faq-question w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition duration-300 focus:outline-none"
               >
                 <span class="font-medium text-gray-800"
-                  >Qui peut participer à cette excursion ?</span
+                  >Qui peut envoyer son message ?</span
                 >
                 <svg
                   class="faq-icon w-5 h-5 text-blue-600 transform transition-transform duration-300"
@@ -788,10 +841,11 @@
               </button>
               <div class="faq-answer hidden p-4 bg-white">
                 <p class="text-gray-700">
-                  L'excursion est ouverte à tous les étudiants et membres du
-                  personnel de l'université. Les accompagnateurs ou personnes
-                  externes peuvent être acceptées sous certaines conditions et
-                  selon les places disponibles.
+                  Toute personne ayant participé ou souhaitant partager son
+                  impression sur l'activité peut envoyer un message. Il n'est
+                  pas nécessaire d'être étudiant ou membre du personnel : tous
+                  les retours et témoignages sont les bienvenus pour enrichir
+                  notre mur à impressions.
                 </p>
               </div>
             </div>
@@ -804,7 +858,7 @@
                 class="faq-question w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition duration-300 focus:outline-none"
               >
                 <span class="font-medium text-gray-800"
-                  >Quel est le coût de participation ?</span
+                  >Quel type de message écrire ?</span
                 >
                 <svg
                   class="faq-icon w-5 h-5 text-blue-600 transform transition-transform duration-300"
@@ -822,9 +876,13 @@
               </button>
               <div class="faq-answer hidden p-4 bg-white">
                 <p class="text-gray-700">
-                  L'excursion est subventionnée par l'université. Une
-                  contribution de 10$ est demandée aux participants. Ce tarif
-                  inclut le transport, les activités et le déjeuner.
+                  Les messages publiés sur le mur doivent rester courtois,
+                  respectueux et bienveillants envers tous. Partagez vos
+                  impressions, remerciements, anecdotes ou suggestions en lien
+                  avec l'activité, en évitant tout propos offensant,
+                  discriminatoire ou inapproprié. L'objectif est de créer un
+                  espace d'échange positif et constructif pour tous les
+                  participants.
                 </p>
               </div>
             </div>
@@ -837,7 +895,7 @@
                 class="faq-question w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition duration-300 focus:outline-none"
               >
                 <span class="font-medium text-gray-800"
-                  >Que dois-je apporter le jour de l'excursion ?</span
+                  >Peut-on savoir qui envoie le message ?</span
                 >
                 <svg
                   class="faq-icon w-5 h-5 text-blue-600 transform transition-transform duration-300"
@@ -855,11 +913,11 @@
               </button>
               <div class="faq-answer hidden p-4 bg-white">
                 <p class="text-gray-700">
-                  Nous recommandons d'apporter : une pièce d'identité, une
-                  bouteille d'eau, des vêtements adaptés à la météo, des
-                  chaussures confortables, un chapeau/casquette, de la crème
-                  solaire, et éventuellement un carnet de notes et un appareil
-                  photo.
+                  Les messages publiés sur le mur des impressions sont anonymes.
+                  Aucune information personnelle n'est demandée ni affichée lors
+                  de l'envoi d'un message. Votre identité ne sera pas visible
+                  publiquement et ne sera pas enregistrée, afin de garantir la
+                  confidentialité et la liberté d'expression de chacun.
                 </p>
               </div>
             </div>
@@ -872,7 +930,8 @@
                 class="faq-question w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition duration-300 focus:outline-none"
               >
                 <span class="font-medium text-gray-800"
-                  >Comment se déroule l'inscription et le paiement ?</span
+                  >Qu'a-t-il à savoir d'autres à propos du mur à impression
+                  ?</span
                 >
                 <svg
                   class="faq-icon w-5 h-5 text-blue-600 transform transition-transform duration-300"
@@ -890,16 +949,36 @@
               </button>
               <div class="faq-answer hidden p-4 bg-white">
                 <p class="text-gray-700">
-                  Après avoir soumis le formulaire d'inscription, vous recevrez
-                  dans la suite un message de confirmation avec les instructions
-                  de paiement. Le paiement doit être effectué dans les 7 jours
-                  suivant l'inscription pour garantir votre place.
+                  Voici quelques conseils pour profiter pleinement du mur à
+                  impression :
                 </p>
+                <ul class="list-disc pl-6 mt-2">
+                  <li>
+                    Exprimez-vous librement mais toujours dans le respect des
+                    autres.
+                  </li>
+                  <li>
+                    Relisez votre message avant de le publier pour éviter les
+                    erreurs.
+                  </li>
+                  <li>
+                    Évitez de publier des informations personnelles ou
+                    sensibles.
+                  </li>
+                  <li>
+                    Partagez vos anecdotes, remerciements ou suggestions pour
+                    inspirer les autres.
+                  </li>
+                  <li>
+                    Si un message ne respecte pas les règles, il pourra être
+                    modéré ou supprimé.
+                  </li>
+                </ul>
               </div>
             </div>
 
             <!-- FAQ Item 5 -->
-            <div
+            <!-- <div
               class="faq-item border border-gray-200 rounded-lg overflow-hidden"
             >
               <button
@@ -929,7 +1008,7 @@
                   jours avant l'événement, aucun remboursement ne sera effectué.
                 </p>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -942,8 +1021,7 @@
           Contactez-nous
         </h2>
         <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-          Pour toute question concernant l'excursion, n'hésitez pas à nous
-          contacter.
+          Pour toute question, n'hésitez pas à nous contacter.
         </p>
 
         <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -1208,25 +1286,25 @@
                   >Accueil</a
                 >
               </li>
-              <li>
+              <!-- <li>
                 <a
                   href="#programme"
                   class="text-gray-300 hover:text-white transition duration-300"
                   >Programme</a
                 >
-              </li>
+              </li> -->
               <li>
                 <a
-                  href="#galerie"
+                  href="#activités_diverses"
                   class="text-gray-300 hover:text-white transition duration-300"
                   >Galerie</a
                 >
               </li>
               <li>
                 <a
-                  href="#inscription"
+                  href="#impressions"
                   class="text-gray-300 hover:text-white transition duration-300"
-                  >Inscription</a
+                  >Vos impressions</a
                 >
               </li>
               <li>
@@ -1243,7 +1321,7 @@
             <h3 class="text-xl font-bold mb-4">Newsletter</h3>
             <p class="text-gray-300 mb-4">
               Inscrivez-vous pour recevoir les dernières informations sur
-              l'excursion.
+              l'université et autres activités.
             </p>
             <form id="newsletter-form" class="space-y-4">
               <div>
@@ -1270,5 +1348,6 @@
       </div>
     </footer>
     <script src="index.js"></script>
+    <script src="codeblog.js"></script>
   </body>
 </html>

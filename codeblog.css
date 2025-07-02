@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap");
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+}
+
+.message {
+  font-family: "Playfair Display", serif;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.8s forwards;
+  transition: all 0.3s ease;
+}
+
+.message:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.color-1 {
+  background-color: #ffd1dc;
+  color: #333;
+}
+.color-2 {
+  background-color: #ffadad;
+  color: #333;
+}
+.color-3 {
+  background-color: #ffd6a5;
+  color: #333;
+}
+.color-4 {
+  background-color: #fdffb6;
+  color: #333;
+}
+.color-5 {
+  background-color: #caffbf;
+  color: #333;
+}
+.color-6 {
+  background-color: #9bf6ff;
+  color: #333;
+}
+.color-7 {
+  background-color: #a0c4ff;
+  color: #333;
+}
+.color-8 {
+  background-color: #bdb2ff;
+  color: #333;
+}
+.color-9 {
+  background-color: #ffc6ff;
+  color: #333;
+}
+
+.rotate-1 {
+  transform: rotate(-2deg);
+}
+.rotate-2 {
+  transform: rotate(1deg);
+}
+.rotate-3 {
+  transform: rotate(2deg);
+}
+.rotate-4 {
+  transform: rotate(-1deg);
+}
+.rotate-5 {
+  transform: rotate(0deg);
+}

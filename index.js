@@ -64,11 +64,15 @@ function updateCountdown() {
     document.getElementById("hours").innerText = hours;
     document.getElementById("minutes").innerText = minutes;
     document.getElementById("seconds").innerText = seconds;
+    document.getElementById("autre").innerText = "--";
+    document.getElementById("autres").innerText="--";
   } else {
-    document.getElementById("days").innerText = "TH";
-    document.getElementById("hours").innerText = "AN";
-    document.getElementById("minutes").innerText = "K Y";
-    document.getElementById("seconds").innerText = "OU";
+    document.getElementById("days").innerText = "M";
+    document.getElementById("hours").innerText = "E";
+    document.getElementById("minutes").innerText = "R";
+    document.getElementById("seconds").innerText = "C";
+    document.getElementById("autre").innerText = "I";
+    document.getElementById("autres").innerText = "!";
   }
 }
 
@@ -93,36 +97,36 @@ document.querySelectorAll(".faq-question").forEach((question) => {
     }
   });
 });
-const form = document.getElementById("inscription-form");
-const confirmation = document.getElementById("confirmation-message");
+// const form = document.getElementById("inscription-form");
+// const confirmation = document.getElementById("confirmation-message");
 
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
+// form.addEventListener("submit", function (e) {
+//   e.preventDefault();
 
-  const prenom = document.getElementById("prenom").value.trim();
-  const nom = document.getElementById("nom").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const tel = document.getElementById("telephone").value.trim();
-  const besoin = document.getElementById("besoins").value.trim();
+//   const prenom = document.getElementById("prenom").value.trim();
+//   const nom = document.getElementById("nom").value.trim();
+//   const email = document.getElementById("email").value.trim();
+//   const tel = document.getElementById("telephone").value.trim();
+//   const besoin = document.getElementById("besoins").value.trim();
 
-  const message = `Nouvelle inscription à l'excursion Picasso :
-Prénom: ${prenom}
-Nom: ${nom}
-Email: ${email}
-Téléphone: ${tel}
-Besoin particulier: ${besoin || "Aucune indication"}
-Merci bien`;
+//   const message = `Nouvelle inscription à l'excursion Picasso :
+// Prénom: ${prenom}
+// Nom: ${nom}
+// Email: ${email}
+// Téléphone: ${tel}
+// Besoin particulier: ${besoin || "Aucune indication"}
+// Merci bien`;
 
-  const numeroWhatsApp = "243898955349"; // Remplace par ton numéro
-  const lien = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(
-    message
-  )}`;
+//   const numeroWhatsApp = "243898955349"; // Remplace par ton numéro
+//   const lien = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(
+//     message
+//   )}`;
 
-  window.open(lien, "_blank"); // Ouvre WhatsApp
+//   window.open(lien, "_blank"); // Ouvre WhatsApp
 
-  confirmation.style.display = "block"; // Affiche le message
-  form.reset(); // Réinitialise le formulaire
-});
+//   confirmation.style.display = "block"; // Affiche le message
+//   form.reset(); // Réinitialise le formulaire
+// });
 
 const contactForm = document.getElementById("contact-form");
 contactForm.addEventListener("submit", function (e) {

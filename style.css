@@ -79,7 +79,7 @@ body button:hover {
 #hero-svg {
   height: 350px;
   width: 300px;
-  background: url(AfficheSimple.webp);
+  background: url(Merci.jpg);
   background-size: cover;
   background-position: center;
   border-radius: 10px;
@@ -106,6 +106,11 @@ body button:hover {
 }
 #Basketball {
   background: url(Basketball.jpg);
+  background-size: cover;
+  background-position: center;
+}
+#picasso{
+  background: url(Merci.jpg);
   background-size: cover;
   background-position: center;
 }
